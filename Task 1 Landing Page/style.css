@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  background: transparent;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.navbar .logo-txt {
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 2.1rem;
+  text-decoration: none;
+}
+
+.navbar .logo-txt:hover {
+  color: #16ab1b;
+}
+
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar a {
+  color: #16ab1b;
+  font-weight: 400;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #ff0000;
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url("bg-white.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #16ab1b;
+}
+
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content p {
+  font-weight: 500;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: solid rgb(255, 0, 0) 1px;
+  border-radius: 50px;
+  width: 367px;
+  margin-top: 38px;
+  background: #fff;
+}
+
+.search-box .search-icon img {
+  width: 20px;
+  margin: 6px 6px 0px 18px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 30px 14px 13px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  background: #ff0000;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.search-box button:hover {
+  color: #ffffff;
+  background: #16ab1b;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #000;
+  cursor: pointer;
+  display: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.footer {
+  background-color: #222;
+  color: #16ab1b;
+  padding: 35px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.footer-section {
+  margin: 20px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #16ab1b;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  background-color: #16ab1b;
+  color: #222;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+
+  .navbar .logo-txt {
+    font-size: 1.7rem;
+  }
+
+  #hamburger-btn,
+  #close-menu-btn {
+    display: block;
+  }
+
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  .navbar a {
+    color: #000;
+  }
+
+  .hero-section {
+    height: 101vh;
+  }
+
+  .hero-section .content {
+    text-align: center;
+  }
+
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+
+  .search-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px auto 0 auto;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .search-box input,
+  .search-box button {
+    flex: none;
+    width: auto;
+    margin: 5px 0;
+  }
+
+  .search-box .search-icon img {
+    margin: 10px 0px 5px 20px;
+    width: 27px;
+  }
+
+  .search-box input {
+    padding: 10px;
+  }
+
+  .search-box button {
+    padding: 13px 30px;
+    border-radius: 50px;
+    margin: 0px 0px 0px 0px;
+  }
+}
